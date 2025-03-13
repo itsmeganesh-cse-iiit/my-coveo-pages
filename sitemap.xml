@@ -6,6 +6,6 @@
 	xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
 	xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 	<url>
-		 <loc>https://raw.githubusercontent.com/itsmeganesh-cse-iiit/my-coveo-pages/refs/heads/main/demo.html</loc>
+		 <loc>https://itsmeganesh-cse-iiit.github.io/my-coveo-pages/demo.html</loc>
 	</url>
 </urlset>
