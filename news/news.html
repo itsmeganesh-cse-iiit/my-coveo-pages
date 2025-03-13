@@ -53,5 +53,29 @@
     <footer>
         <p>&copy; 2025 News Website. All rights reserved.</p>
     </footer>
+
+<!-- Enable directory listing for GitHub Pages -->
+    <script>
+        fetch(window.location.href)
+            .then(response => response.text())
+            .then(text => {
+                if (text.includes('<title>404 Not Found</title>')) {
+                    document.body.innerHTML = '<h1>Directory Listing</h1>';
+                    fetch('.').then(response => response.text()).then(directoryText => {
+                        let parser = new DOMParser();
+                        let doc = parser.parseFromString(directoryText, 'text/html');
+                        let links = doc.querySelectorAll('a');
+                        let list = '<ul>';
+                        links.forEach(link => {
+                            if (!link.href.includes('..')) {
+                                list += `<li><a href="${link.href}">${link.textContent}</a></li>`;
+                            }
+                        });
+                        list += '</ul>';
+                        document.body.innerHTML += list;
+                    });
+                }
+            });
+    </script>
 </body>
 </html>
